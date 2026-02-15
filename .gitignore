@@ -1,3 +1,5 @@
 /target
+/runner/target
 *.wasm
 grammars/
+.idea

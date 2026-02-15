@@ -1,54 +1,43 @@
-
-### Simple GET Request
-GET http://example.com/api/data
-Accept: application/json
-Cache-Control: no-cache
-
-###
-
-### POST Request with JSON Body
-POST http://example.com/api/users
-Content-Type: application/json
-Authorization: Bearer your_access_token_here
-
-{
-  "name": "John Doe",
-  "email": "john.doe@example.com"
-}
-
-###
-
-### PUT Request with URL Parameters and Headers
-PUT http://example.com/api/users/123?active=true
-Content-Type: application/json
-X-Custom-Header: 12345
-
-{
-  "status": "active"
-}
-
-###
-
-### DELETE Request
-DELETE http://example.com/api/users/123
-Authorization: Bearer your_access_token_here
-
-###
-
-### HEAD Request
-HEAD http://example.com/api/users
+### GET a post
+GET https://jsonplaceholder.typicode.com/posts/1
 Accept: application/json
 
 ###
 
+### POST create a new post
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
 
-### PATCH Request with XML Body
-PATCH http://example.com/api/users/123
-Content-Type: application/xml
-Authorization: Bearer your_access_token_here
+{
+  "title": "foo",
+  "body": "bar",
+  "userId": 1
+}
 
-<?xml version="1.0" encoding="UTF-8"?>
-<user>
-  <email>update@example.com</email>
-  <status>active</status>
-</user>
+###
+
+### PUT update a post
+PUT https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "updated title",
+  "body": "updated body",
+  "userId": 1
+}
+
+###
+
+### DELETE a post
+DELETE https://jsonplaceholder.typicode.com/posts/1
+
+###
+
+### PATCH a post
+PATCH https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "title": "patched title"
+}

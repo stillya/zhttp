@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - run: cargo fmt --check -p zhttp
+      - run: cargo fmt --check -p zhttp-lsp
+      - run: cargo clippy -p zhttp -- -D warnings
+      - run: cargo clippy -p zhttp-lsp -- -D warnings
+      - run: cargo test -p zhttp

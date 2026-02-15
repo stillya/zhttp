@@ -1,0 +1,10 @@
+[
+  {
+    "label": "$ZED_CUSTOM_method $ZED_CUSTOM_url",
+    "command": "zhttp",
+    "args": ["$ZED_FILE", "--line", "$ZED_ROW"],
+    "tags": ["http-request"],
+    "show_command": false,
+    "show_summary": false
+  }
+]
