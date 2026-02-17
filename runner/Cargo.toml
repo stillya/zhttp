@@ -9,5 +9,6 @@ name = "zhttp"
 path = "src/main.rs"
 
 [dependencies]
+clap = { version = "4", features = ["derive"] }
 ureq = "2"
 serde_json = "1"
